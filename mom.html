@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Mother's Day ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom right,#ffd6e8,#ffeef5);
+    text-align:center;
+    overflow:hidden;
+}
+
+.container{
+    margin-top:40px;
+}
+
+h1{
+    color:#ff4081;
+    font-size:45px;
+}
+
+p{
+    font-size:20px;
+    color:#444;
+    width:70%;
+    margin:auto;
+}
+
+img{
+    width:260px;
+    border-radius:50%;
+    border:6px solid white;
+    box-shadow:0px 0px 25px pink;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:25px;
+    background:#ff4081;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff79a8;
+}
+
+/* floating hearts */
+.heart{
+    position:absolute;
+    color:pink;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Mother's Day 💖</h1>
+
+<img src="mom.jpg">
+
+<p id="message">
+Click the button Mom ❤️
+</p>
+
+<button onclick="showMessage()">Open My Heart 💌</button>
+
+</div>
+
+<script>
+
+function showMessage(){
+document.getElementById("message").innerHTML =
+"Dear Mom ❤️<br><br>\
+You are my first teacher, my strongest support, and my forever best friend. \
+I feel the luckiest child on this planet to have you as my mother. \
+No one can ever match your intelligence, love, and care. \
+Thank you for believing in me every single day and u deserve the best of all. \
+I just can't express my feelings, but mumma you have my complete heart. \
+I love you more than words, code, or algorithms can ever express. 💕";
+}
+
+/* hearts animation */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+},400);
+
+</script>
+
+</body>
+</html>
